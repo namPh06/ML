@@ -1,12 +1,11 @@
-"""Chạy từ thư mục repo hoặc bằng đường dẫn tuyệt đối: python run_module3.py."""
+"""Chạy từ thư mục Module 3 hoặc bằng đường dẫn tuyệt đối: python run_module3.py."""
 import argparse
 import importlib.metadata
 from pathlib import Path
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parent
-MODULE_ROOT = ROOT / "Module 3"
+MODULE_ROOT = Path(__file__).resolve().parent
 
 def main():
     for stream in (sys.stdout, sys.stderr):
@@ -36,7 +35,7 @@ def main():
             missing.append(f"{name}=={expected}")
     if missing:
         print("Cần cài/cập nhật thư viện: " + ", ".join(missing), file=sys.stderr)
-        print(f'Chạy: "{sys.executable}" -X utf8 -m pip install -r "{ROOT / "requirements.txt"}"', file=sys.stderr)
+        print(f'Chạy: "{sys.executable}" -X utf8 -m pip install -r "{MODULE_ROOT / "requirements.txt"}"', file=sys.stderr)
         return 1
     command = [sys.executable, "-B", "-X", "utf8", "-m", "module3.prepare", "--queries", str(args.queries)]
     if args.data:

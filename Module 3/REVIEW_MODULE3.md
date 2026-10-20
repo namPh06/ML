@@ -59,7 +59,7 @@ Kết quả kiểm tra phản ánh dữ liệu, thư viện và các trường h
 
 ## Bổ sung bàn giao qua Git — 20/10/2026
 
-Mã đã chuẩn hóa để chạy ở vị trí bất kỳ, không dùng đường dẫn riêng của tác giả. Launcher ở repo kiểm tra thư viện, tự chuẩn bị và mở Streamlit. Mặc định dùng 12 CSV PRSA chung đã có trong Git; không cần chép joblib. Thư viện runtime được chốt phiên bản; công cụ notebook cài riêng.
+Mã đã chuẩn hóa để chạy ở vị trí bất kỳ, không dùng đường dẫn riêng của tác giả. Launcher trong Module 3 kiểm tra thư viện, tự chuẩn bị và mở Streamlit. Mặc định dùng 12 CSV PRSA chung đã có trong Git; không cần chép joblib. Thư viện runtime được chốt phiên bản; công cụ notebook cài riêng.
 
 Đã thử trên bản xuất từ danh sách Git (gồm mã mới chưa commit, loại toàn bộ artifact, ZIP cache và venv) trong đường dẫn có dấu/khoảng trắng. Dùng thư viện đang cài trên máy kiểm tra, không thử tải/cài lại các wheel từ Internet. Các trường hợp đạt:
 
@@ -72,4 +72,10 @@ Mã đã chuẩn hóa để chạy ở vị trí bất kỳ, không dùng đư�
 - Thiếu/sai thư viện được báo cùng lệnh cài, không mở app lỗi.
 - Pip dry-run đọc đúng requirements lồng trong đường dẫn có khoảng trắng; cú pháp mã kiểm tra theo Python 3.11.
 
-Bản sao và artifact kiểm tra đã được dọn. Không giữ lại file mã test. README chung và README module có hướng dẫn cài/chạy Windows và macOS/Linux; chưa trực tiếp chạy trên macOS/Linux. Các thay đổi cần được commit/push trước khi người khác pull được.
+Bản sao và artifact kiểm tra đã được dọn. Không giữ lại file mã test. README khởi chạy và README module có hướng dẫn cài/chạy Windows và macOS/Linux; chưa trực tiếp chạy trên macOS/Linux. Các thay đổi cần được commit/push trước khi người khác pull được.
+
+## Đóng gói thư mục — 20/10/2026
+
+Toàn bộ launcher, requirements, hướng dẫn, quy tắc ignore, mã nguồn và artifact của Module 3 nằm trong Module 3/. Bên ngoài chỉ còn data/ dùng chung và Module 3/; giữ nguyên .git để quản lý phiên bản. Chạy python run_module3.py từ Module 3. Dữ liệu chung vẫn được tìm theo vị trí mã nguồn.
+
+Kiểm tra sau đóng gói: tạo lại đầy đủ hai mô hình từ CSV chung; gọi launcher bằng đường dẫn từ ngoài Module 3 dùng lại cache; AppTest mở đủ 12 trạm và truy vấn thành công. Đã kiểm tra cú pháp Python 3.11, đường dẫn khởi chạy/cài thư viện và quy tắc gitignore. Không tạo file mã test.

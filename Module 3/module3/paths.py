@@ -19,7 +19,7 @@ def source_fingerprint(source):
     if source.is_file():
         return hashlib.sha256(source.read_bytes()).hexdigest()
     if not source.is_dir():
-        raise FileNotFoundError(f"Không có dữ liệu: {source}. Chạy python run_module3.py từ thư mục repo.")
+        raise FileNotFoundError(f"Không có dữ liệu: {source}. Chạy python run_module3.py từ thư mục Module 3.")
     files = sorted(source.rglob("PRSA_Data_*.csv"))
     if not files:
         raise ValueError(f"Không tìm thấy CSV PRSA trong {source}.")

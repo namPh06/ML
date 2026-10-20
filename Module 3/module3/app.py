@@ -87,11 +87,11 @@ def render(artifacts=None):
     st.write("Tra cứu các quan sát lịch sử gần với thời điểm hoặc điều kiện bạn chọn.")
     metadata_file=artifacts/"metadata.json"
     if not metadata_file.exists():
-        st.info("Chưa có kho lịch sử. Từ thư mục repo (có run_module3.py), chạy: python run_module3.py --prepare-only. Sau đó tải lại trang.")
+        st.info("Chưa có kho lịch sử. Từ thư mục Module 3 (có run_module3.py), chạy: python run_module3.py --prepare-only. Sau đó tải lại trang.")
         return
     metadata=json.loads(metadata_file.read_text(encoding="utf-8"))
     if metadata.get("artifact_version") != 2:
-        st.info("Kho lịch sử cần cập nhật. Chạy python run_module3.py --rebuild từ thư mục repo để tạo lại bộ tìm kiếm.")
+        st.info("Kho lịch sử cần cập nhật. Chạy python run_module3.py --rebuild từ thư mục Module 3 để tạo lại bộ tìm kiếm.")
         return
     metric=st.sidebar.selectbox("Khoảng cách",["euclidean","manhattan"],index=0 if metadata["metric"]=="euclidean" else 1,key="m3_metric")
     filename=metadata["model_files"][metric]

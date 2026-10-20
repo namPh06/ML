@@ -4,7 +4,7 @@ Module độc lập của đề tài: StandardScaler + NearestNeighbors, đủ 1
 
 ## Cài và chạy sau khi clone/pull
 
-Cách khuyến nghị: từ thư mục gốc repo, làm theo [README chung](../README.md). Trên Windows:
+Cách khuyến nghị: vào thư mục Module 3, làm theo [hướng dẫn khởi chạy](README.md). Trên Windows:
 
 ~~~powershell
 python -m venv .venv
@@ -12,7 +12,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe run_module3.py
 ~~~
 
-Các lệnh trên chạy ở thư mục chứa run_module3.py, KHÔNG chạy trong thư mục Module 3. Không cần chép joblib hay thư mục artifacts từ máy khác.
+Các lệnh trên chạy trong thư mục Module 3, nơi chứa run_module3.py và requirements.txt. Không cần chép joblib hay thư mục artifacts từ máy khác.
 
 Lần đầu launcher tự chuẩn bị dữ liệu/mô hình/báo cáo. Các lần sau kiểm tra chữ ký nội dung dữ liệu, mã pipeline và phiên bản thư viện; chỉ dùng lại artifact phù hợp và nạp/truy vấn được. Bước chuẩn bị có khóa OS để hai launcher không cùng ghi mô hình. Nếu bị ngắt khi chuẩn bị, lần sau tạo lại. Có thể buộc tạo lại bằng --rebuild; --prepare-only chỉ chuẩn bị, chưa mở giao diện.
 
@@ -22,8 +22,10 @@ Python yêu cầu từ 3.11, khuyến nghị 3.11–3.14. requirements.txt chố
 
 ~~~text
 repo/data/PRSA_Data_*.csv             # Dữ liệu chung, ưu tiên đọc
-repo/run_module3.py                   # Khởi chạy từ repo hoặc đường dẫn tuyệt đối
 repo/Module 3/
+    run_module3.py                   # Chuẩn bị rồi mở giao diện
+    README.md                        # Cài và chạy
+    requirements.txt                 # Thư viện runtime
     module3/paths.py                  # Đường dẫn mặc định theo vị trí mã
     module3/prepare.py                # Kiểm tra cache, tải dữ liệu nếu thiếu, xây artifact
     module3/download_data.py          # Tải/kiểm tra ZIP UCI
@@ -39,7 +41,7 @@ repo/Module 3/
 
 Nguồn dữ liệu mặc định ưu tiên data/ của repo nếu có CSV PRSA. Nếu không có, dùng ZIP cache trong module; launcher/notebook tải ZIP từ UCI nếu cần. Bộ đọc thư mục chỉ lấy PRSA_Data_*.csv nên không đọc nhầm hai CSV giá giao dịch trong data/ chung.
 
-CLI mặc định đặt artifact theo vị trí mã nguồn. --data/--output được truyền tường minh dùng đường dẫn tương đối từ thư mục gọi lệnh. Các lệnh dạng python -m module3... cần chạy từ Module 3 hoặc có package module3 trong sys.path. Launcher ở repo tự xử lý việc này.
+CLI mặc định đặt artifact theo vị trí mã nguồn. --data/--output được truyền tường minh dùng đường dẫn tương đối từ thư mục gọi lệnh. Các lệnh dạng python -m module3... cần chạy từ Module 3 hoặc có package module3 trong sys.path. Launcher trong Module 3 tự xử lý việc này.
 
 ## Sử dụng giao diện
 
@@ -136,7 +138,7 @@ python -m module3.download_data --force
 
 train.py cho phép --metric manhattan; lúc đó knn.joblib là Manhattan, file phụ là knn_euclidean.joblib. App đọc model_files trong metadata. Launcher quản lý cache mặc định Euclidean; muốn giữ thí nghiệm riêng nên dùng --output riêng với train.py.
 
-Cài bổ sung notebook từ repo: python -X utf8 -m pip install -r "Module 3/requirements-notebook.txt". Chọn interpreter venv, mở notebook và Run All. REBUILD=True buộc tạo lại; mặc định dùng lại artifact phù hợp. Output notebook được xóa khỏi bản nguồn để không mang theo ảnh/kết quả cũ của máy tác giả; chạy sẽ tạo kết quả thực.
+Cài bổ sung notebook từ Module 3: python -X utf8 -m pip install -r requirements-notebook.txt. Chọn interpreter venv, mở notebook và Run All. REBUILD=True buộc tạo lại; mặc định dùng lại artifact phù hợp. Output notebook được xóa khỏi bản nguồn để không mang theo ảnh/kết quả cũ của máy tác giả; chạy sẽ tạo kết quả thực.
 
 ## Giới hạn
 
