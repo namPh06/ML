@@ -1,0 +1,11 @@
+# Một danh sách dùng chung cho notebook, lệnh chạy và ứng dụng.
+numpy>=2.0,<3
+pandas>=2.2,<3
+scikit-learn>=1.7,<1.9
+matplotlib>=3.9,<4
+joblib>=1.4,<2
+streamlit>=1.49,<2
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6.29,<8
+notebook>=7,<8

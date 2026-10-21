@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+outputs/*.joblib
+outputs/predictions.csv
+outputs/.training
