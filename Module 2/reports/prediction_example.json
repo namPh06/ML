@@ -1,0 +1,14 @@
+{
+  "station": "Aotizhongxin",
+  "as_of_time": "2016-05-01T09:00:00+08:00",
+  "target_time": "2016-05-01T10:00:00+08:00",
+  "predicted_class": "Cao",
+  "probabilities": {
+    "Thấp": 3.815909521717416e-12,
+    "Trung bình": 0.0006170750787729136,
+    "Cao": 0.9993829249174111
+  },
+  "label_policy": "train_quantiles_v1",
+  "model_version": "module2_v1",
+  "missing_feature_count": 0
+}

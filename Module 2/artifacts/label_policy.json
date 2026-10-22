@@ -1,0 +1,23 @@
+{
+  "strategy": "train_quantiles_v1",
+  "thresholds": [
+    34.0,
+    96.0
+  ],
+  "classes": [
+    "Thấp",
+    "Trung bình",
+    "Cao"
+  ],
+  "boundaries": [
+    "0 <= p <= q1",
+    "q1 < p <= q2",
+    "p > q2"
+  ],
+  "unit": "µg/m³",
+  "fit_target_time": [
+    "2013-03-01",
+    "2015-03-01 (exclusive)"
+  ],
+  "official_aqi": false
+}

@@ -1,0 +1,379 @@
+{
+  "model_version": "module2_v1",
+  "feature_set": "rolling",
+  "features": [
+    "PM2.5",
+    "PM10",
+    "SO2",
+    "NO2",
+    "CO",
+    "O3",
+    "TEMP",
+    "PRES",
+    "DEWP",
+    "RAIN",
+    "WSPM",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "day_of_week",
+    "pm25_lag_1",
+    "pm25_lag_2",
+    "pm25_lag_3",
+    "pm25_lag_6",
+    "pm25_lag_12",
+    "pm25_lag_24",
+    "mean_3",
+    "std_3",
+    "count_3",
+    "mean_6",
+    "std_6",
+    "count_6",
+    "trend",
+    "wd",
+    "station"
+  ],
+  "stations": [
+    "Aotizhongxin",
+    "Changping",
+    "Dingling",
+    "Dongsi",
+    "Guanyuan",
+    "Gucheng",
+    "Huairou",
+    "Nongzhanguan",
+    "Shunyi",
+    "Tiantan",
+    "Wanliu",
+    "Wanshouxigong"
+  ],
+  "training_target_end": "2015-02-28 23:00:00",
+  "training_as_of_end": "2015-02-28 22:00:00",
+  "splits": {
+    "train": [
+      "2013-03-01",
+      "2015-03-01"
+    ],
+    "validation": [
+      "2015-03-01",
+      "2016-03-01"
+    ],
+    "test": [
+      "2016-03-01",
+      "2017-03-01"
+    ]
+  },
+  "selected_run": {
+    "feature_set": "rolling",
+    "C": 10.0,
+    "class_weight": "balanced",
+    "fit_seconds": 8.23029370000586,
+    "warnings": [],
+    "converged": true,
+    "n": 103287,
+    "accuracy": 0.8996582338532438,
+    "macro_f1": 0.8986506491656484,
+    "recall_high": 0.8978044063554662,
+    "high_to_low": 0.001516817716430928
+  },
+  "refit_train_validation": false,
+  "majority_class": 0,
+  "thresholds": [
+    34.0,
+    96.0
+  ],
+  "versions": {
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.7",
+    "joblib": "1.5.2",
+    "streamlit": "1.56.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.11.0"
+  },
+  "python": "3.13.5",
+  "created_at": "2026-10-21T10:56:04.373437+00:00",
+  "sha256": {
+    "PRSA_Data_Aotizhongxin_20130301-20170228.csv": "a94fbcfc71708b6ffdc033360163d91efb7f675e496f6b5860929aa96b96351b",
+    "PRSA_Data_Changping_20130301-20170228.csv": "a2e21402a6d95fb7043f87959e6e3dcbecb957aac356a6f8028a85b047c772e7",
+    "PRSA_Data_Dingling_20130301-20170228.csv": "3d8dff81f18a80d9f455876a785642bffe1e9b9924ec1e6b7ce8cca790432eeb",
+    "PRSA_Data_Dongsi_20130301-20170228.csv": "9c0020214425e5ee2a64d42f97a1f632e1d8f6b53ad50edd85a686cc7999f27e",
+    "PRSA_Data_Guanyuan_20130301-20170228.csv": "59390fee3b032597b387491f5230e7edb90a8558e30217ebd6d9befbe669fbf9",
+    "PRSA_Data_Gucheng_20130301-20170228.csv": "10ae48801ea55869fee56a48b885fb1127859c130551888d71673f34216ba951",
+    "PRSA_Data_Huairou_20130301-20170228.csv": "812dcbe848b3ba2c2d25731064797bff803c46eb0c602156a1fa044df136dc26",
+    "PRSA_Data_Nongzhanguan_20130301-20170228.csv": "572cf87b65ef543cd55d3a711b28474def224a46b0ec3fc8add8aaf13b67a487",
+    "PRSA_Data_Shunyi_20130301-20170228.csv": "520b59e4ead3b0cfe7f1ed673e30275de8441e999db6f413d5172d2277b8c15a",
+    "PRSA_Data_Tiantan_20130301-20170228.csv": "0743e34799cf1ee36195b73321b91baa5625276532e7263c588f68cdef3b4daa",
+    "PRSA_Data_Wanliu_20130301-20170228.csv": "0b1a6d754a07f0def2f55434ddfa3870dcd0063b7f766a6f66b6c11bb05a377a",
+    "PRSA_Data_Wanshouxigong_20130301-20170228.csv": "ab1d6a356d6997a45f6d657ad47de1e05a4a08d4a7015b38a329a90665ab74d0"
+  },
+  "code_sha256": {
+    "module2.py": "44d45432c465b5544c6b273b68f867d021b395c64117dd606c5a39e8fc87ded7",
+    "train.py": "632a6c9e85f1cbd62d5e7bfebfecf75372f4477fc01407775a1694cf8754ad08"
+  },
+  "timezone": "Asia/Shanghai; naive inputs interpreted as Beijing time",
+  "schema": {
+    "PM2.5": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "PM10": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "SO2": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "NO2": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "CO": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "O3": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "TEMP": {
+      "dtype": "float",
+      "unit": "°C"
+    },
+    "PRES": {
+      "dtype": "float",
+      "unit": "hPa"
+    },
+    "DEWP": {
+      "dtype": "float",
+      "unit": "°C"
+    },
+    "RAIN": {
+      "dtype": "float",
+      "unit": "mm"
+    },
+    "WSPM": {
+      "dtype": "float",
+      "unit": "m/s"
+    },
+    "hour_sin": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "hour_cos": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "month_sin": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "month_cos": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "day_of_week": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "pm25_lag_1": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "pm25_lag_2": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "pm25_lag_3": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "pm25_lag_6": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "pm25_lag_12": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "pm25_lag_24": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "mean_3": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "std_3": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "count_3": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "mean_6": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "std_6": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "count_6": {
+      "dtype": "float",
+      "unit": "dimensionless"
+    },
+    "trend": {
+      "dtype": "float",
+      "unit": "µg/m³"
+    },
+    "wd": {
+      "dtype": "string",
+      "unit": "dimensionless"
+    },
+    "station": {
+      "dtype": "string",
+      "unit": "dimensionless"
+    }
+  },
+  "preprocessing": "Train-only median + missing indicators + StandardScaler; missing category + one-hot",
+  "rolling": "Trailing 3/6 hours including t; min_periods=1; std ddof=1; counts included",
+  "metrics": [
+    {
+      "split": "validation",
+      "model": "majority",
+      "scope": "all",
+      "fallback_rate": 0.007822862509318695,
+      "n": 103287,
+      "accuracy": 0.41578320601818236,
+      "macro_f1": 0.19578478034903443,
+      "recall_high": 0.0,
+      "high_to_low": 1.0
+    },
+    {
+      "split": "validation",
+      "model": "majority",
+      "scope": "observed_current",
+      "fallback_rate": 0.007822862509318695,
+      "n": 102479,
+      "accuracy": 0.4145532255388909,
+      "macro_f1": 0.19537533974420884,
+      "recall_high": 0.0,
+      "high_to_low": 1.0
+    },
+    {
+      "split": "validation",
+      "model": "persistence",
+      "scope": "all",
+      "fallback_rate": 0.007822862509318695,
+      "n": 103287,
+      "accuracy": 0.8968698868202194,
+      "macro_f1": 0.8956363553377358,
+      "recall_high": 0.9117970497895416,
+      "high_to_low": 0.005650145993705206
+    },
+    {
+      "split": "validation",
+      "model": "persistence",
+      "scope": "observed_current",
+      "fallback_rate": 0.007822862509318695,
+      "n": 102479,
+      "accuracy": 0.8994330545770353,
+      "macro_f1": 0.8982717744948756,
+      "recall_high": 0.9161396022251009,
+      "high_to_low": 0.0009144250552465137
+    },
+    {
+      "split": "validation",
+      "model": "logistic",
+      "scope": "all",
+      "fallback_rate": 0.007822862509318695,
+      "n": 103287,
+      "accuracy": 0.8996582338532438,
+      "macro_f1": 0.8986506491656484,
+      "recall_high": 0.8978044063554662,
+      "high_to_low": 0.001516817716430928
+    },
+    {
+      "split": "validation",
+      "model": "logistic",
+      "scope": "observed_current",
+      "fallback_rate": 0.007822862509318695,
+      "n": 102479,
+      "accuracy": 0.9008772529005943,
+      "macro_f1": 0.8999864197469839,
+      "recall_high": 0.8993370418349462,
+      "high_to_low": 0.0013335365389011658
+    },
+    {
+      "split": "test",
+      "model": "majority",
+      "scope": "all",
+      "fallback_rate": 0.008924313645343688,
+      "n": 102753,
+      "accuracy": 0.3795120337119111,
+      "macro_f1": 0.1834039981469593,
+      "recall_high": 0.0,
+      "high_to_low": 1.0
+    },
+    {
+      "split": "test",
+      "model": "majority",
+      "scope": "observed_current",
+      "fallback_rate": 0.008924313645343688,
+      "n": 101836,
+      "accuracy": 0.37941395969990965,
+      "macro_f1": 0.1833696389842011,
+      "recall_high": 0.0,
+      "high_to_low": 1.0
+    },
+    {
+      "split": "test",
+      "model": "persistence",
+      "scope": "all",
+      "fallback_rate": 0.008924313645343688,
+      "n": 102753,
+      "accuracy": 0.8950882212684788,
+      "macro_f1": 0.8949158040625007,
+      "recall_high": 0.9069298672412595,
+      "high_to_low": 0.009974282338222005
+    },
+    {
+      "split": "test",
+      "model": "persistence",
+      "scope": "observed_current",
+      "fallback_rate": 0.008924313645343688,
+      "n": 101836,
+      "accuracy": 0.8996327428414314,
+      "macro_f1": 0.8994685071262939,
+      "recall_high": 0.9142376681614349,
+      "high_to_low": 0.0019969170403587445
+    },
+    {
+      "split": "test",
+      "model": "logistic",
+      "scope": "all",
+      "fallback_rate": 0.008924313645343688,
+      "n": 102753,
+      "accuracy": 0.8969859760785573,
+      "macro_f1": 0.8969326625092222,
+      "recall_high": 0.8888927503996664,
+      "high_to_low": 0.002502258983804824
+    },
+    {
+      "split": "test",
+      "model": "logistic",
+      "scope": "observed_current",
+      "fallback_rate": 0.008924313645343688,
+      "n": 101836,
+      "accuracy": 0.8989846419733689,
+      "macro_f1": 0.8989568803991994,
+      "recall_high": 0.8916760089686099,
+      "high_to_low": 0.0020319506726457397
+    }
+  ]
+}
